@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('/api')
-      .then((res) => res.text())
-      .then((data) => setMessage(data))
-      .catch((err) => console.error('Error fetching from backend:', err));
-  }, []);
-
   return (
-    <div>
-      <h1>React + Express + Postgres App</h1>
-      <p>{message ? message : 'Loading...'}</p>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
